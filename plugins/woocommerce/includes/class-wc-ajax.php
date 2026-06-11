@@ -771,6 +771,15 @@ class WC_AJAX {
 					VisualAttributeTermMeta::save_term_visual_from_request( (int) $result['term_id'], $taxonomy, $_POST ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 					$term = get_term_by( 'id', $result['term_id'], $taxonomy );
+
+					if ( ! $term ) {
+						wp_send_json(
+							array(
+								'error' => __( 'Term not found', 'woocommerce' )
+							)
+						);
+					}
+
 					$response = array(
 						'term_id' => $term->term_id,
 						'name'    => $term->name,
