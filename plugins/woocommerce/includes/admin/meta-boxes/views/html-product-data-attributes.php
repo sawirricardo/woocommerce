@@ -46,7 +46,7 @@ $product_attributes = $product_object->get_attributes( 'edit' );
 		</span>
 		<div class="actions">
 			<button type="button" class="button add_custom_attribute"><?php esc_html_e( 'Add new', 'woocommerce' ); ?></button>
-			<select class="wc-attribute-search" data-placeholder="<?php esc_attr_e( 'Add existing', 'woocommerce' ); ?>" data-minimum-input-length="0">
+			<select class="wc-attribute-search" data-placeholder="<?php esc_attr_e( 'Add global', 'woocommerce' ); ?>" data-minimum-input-length="0">
 			</select>
 		</div>
 	</div>
