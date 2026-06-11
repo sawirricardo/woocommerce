@@ -9,6 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="tips sort" data-tip="<?php esc_attr_e( 'Drag and drop to set admin attribute order', 'woocommerce' ); ?>"></div>
 		<a href="#" class="remove_row delete"><?php esc_html_e( 'Remove', 'woocommerce' ); ?></a>
 		<strong class="attribute_name<?php echo esc_attr( $attribute->get_name() === '' ? ' placeholder' : '' ); ?>"><?php echo esc_html( $attribute->get_name() !== '' ? wc_attribute_label( $attribute->get_name() ) : __( 'New attribute', 'woocommerce' ) ); ?></strong>
+		<?php if ( $attribute->is_taxonomy() ) : ?>
+			<span class="woocommerce-attribute-global-badge"><?php esc_html_e( 'Global', 'woocommerce' ); ?></span>
+		<?php endif; ?>
 	</h3>
 	<div class="woocommerce_attribute_data wc-metabox-content hidden">
 		<?php require __DIR__ . '/html-product-attribute-inner.php'; ?>
